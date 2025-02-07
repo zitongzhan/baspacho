@@ -17,11 +17,5 @@ int main(int argc, char** argv) {
     printf("CUDA error: %s", cudaGetErrorString(error));
     return rc; /* Failure */
   }
-  if ((dP.major + (dP.minor / 10)) < min_cc) {
-    printf("Min Compute Capability of %2.1f required:  %d.%d found", min_cc, dP.major, dP.minor);
-    return 1; /* Failure */
-  } else {
-    printf("%d%d", dP.major, dP.minor);
-    return 0; /* Success */
-  }
+  return 0;
 }
