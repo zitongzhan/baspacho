@@ -16,5 +16,6 @@ int main(int argc, char** argv) {
     printf("CUDA error: %s", cudaGetErrorString(error));
     return rc; /* Failure */
   }
+  printf("%d%d", dP.major, dP.minor);
   return 0;
 }
