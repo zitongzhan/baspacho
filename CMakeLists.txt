@@ -62,13 +62,7 @@ if(BASPACHO_USE_CUBLAS)
                     RESULT_VARIABLE CUDA_RETURN_CODE
                     OUTPUT_VARIABLE RESULT)
 
-    if(CUDA_RETURN_CODE EQUAL 0)
-      message("* CUDA architectures: '${RESULT}' (autodetected installed GPU)")
-      set(BASPACHO_CUDA_ARCHITECTURES "${RESULT}")
-    else()
-      message(FATAL_ERROR "CUDA architecture detection failed: ${RESULT}")
-    endif()
-	elseif(BASPACHO_CUDA_ARCHS STREQUAL "torch")
+
     message("* Getting Torch CUDA architectures...")
     set(CUDA_GET_TORCH_ARCHS_BIN "${CMAKE_CURRENT_SOURCE_DIR}/cmake/get_torch_cuda_archs.py")
     message("${Yellow}  python ${CUDA_GET_TORCH_ARCHS_BIN}${ColourReset}")
